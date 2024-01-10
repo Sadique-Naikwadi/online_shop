@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <p class="mt-3">{{ product.name }}</p>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ product.image.url }}" class="img-fluid" />
+        </div>
+        <div class="col-md-8">
+            {{ product.description }}
+        </div>
+    </div>
+    <a href="{% url 'shop:products_by_category' product.category.slug %}">Go back</a>
+{% endblock content %}
+    
