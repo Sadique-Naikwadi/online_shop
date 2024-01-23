@@ -8,7 +8,7 @@
             <img src="{{ product.image.url }}" class="img-fluid" />
         </div>
         <div class="col-md-8">
-            {{ product.description }}
+            {{ product.description|linebreaks }}
         </div>
     </div>
     <a href="{% url 'shop:products_by_category' product.category.slug %}">Go back</a>
