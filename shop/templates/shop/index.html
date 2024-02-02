@@ -2,7 +2,7 @@
 
 
 {% block content %}
-{% load static %}
+
 <main>
     <section class="py-2 text-center container">
       <div class="row py-lg-4">
@@ -28,13 +28,14 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <span class="fw-bold me-2 mt-1">${{ product.price }}</span>
-                  <button type="button" class="btn btn-sm btn-outline-success">Add to Cart</button>
+                  <button type="button" class="btn btn-sm btn-outline-success add-to-cart">Add to Cart</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
         {% endfor %} 
+        
     </div>
 
 </main>
