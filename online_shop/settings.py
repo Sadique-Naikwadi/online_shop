@@ -52,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'online_shop.urls'
 
 TEMPLATES = [
@@ -131,4 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CART_SESSION_ID = 'cart'
+CSRF_COOKIE_SECURE = False # Set to False if using non-HTTPS in development
+CSRF_COOKIE_HTTPONLY = False
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+CART_SESSION_ID = 'cartkey'
+
