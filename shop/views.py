@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
+from django.core.exceptions import ValidationError
+
 
 # Create your views here.
 
@@ -13,6 +15,10 @@ def index(request, category_slug=None):
     return render(request, 'shop/index.html', context)
 
 def product_details(request,pk,slug):
+    
     product = get_object_or_404(Product, id=pk, slug=slug)
     context = {'product': product}
     return render(request, 'shop/product_details.html', context)
+    
+
+    

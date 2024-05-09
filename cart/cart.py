@@ -17,6 +17,7 @@ class Cart:
         product_id = str(product.id)
         if product_id not in self.cart:
             self.cart[product_id] = {'quantity': quantity, 'price': str(product.price)}
+            
 
         else:
             self.cart[product_id]['quantity'] = quantity
@@ -40,12 +41,13 @@ class Cart:
     def __iter__(self):
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)
+    
 
+        cart = self.cart.copy()
         for product in products:
             self.cart[str(product.id)]['product'] = product
+    
         
-        cart = self.cart.copy()
-
         for item in cart.values():
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']

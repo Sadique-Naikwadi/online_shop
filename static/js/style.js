@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', (event) =>{
     buttons.forEach(button => {
         button.addEventListener('click', (event)=>{
         event.preventDefault();   
-        let product = button.value;
+        let product_id = button.value;
         
     
-        fetch('/cart/add_to_cart/product.id/', {
+        fetch('/cart/add_to_cart/', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken},
             mode: 'same-origin',
-            body: JSON.stringify({product: product}),
+            body: JSON.stringify({product_id: product_id}),
         }).then((response) => {
             if(!response.ok){
                 throw Error(response.statusText);

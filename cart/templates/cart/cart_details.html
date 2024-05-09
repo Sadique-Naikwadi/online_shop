@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Your Cart</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Product Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example product in the cart -->
+        
+        
+       {% for item in cart %}
+           
+
+          <tr>
+            <td>{{ item.product }}</td>
+            <td>
+            <!-- <input type="number" value="1" min="1" class="form-control"> -->
+              <select class="form-select">
+                <option value="1" selected>{{ item.quantity }}</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more options as needed -->
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-danger">Remove</button>
+            </td>
+          </tr>
+          
+        {% empty %}
+
+        <p>Your Cart is empty. Try again.</p>
+          
+        {% endfor %}
+      
+        <!-- Add more product rows as needed -->
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}
+    
