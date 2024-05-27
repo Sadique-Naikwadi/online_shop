@@ -25,7 +25,15 @@ class Cart:
         
         self.save()
 
+    def update(self, request, product, quantity):
+        self.session = request.session
+        self.cart = self.session.get(settings.CART_SESSION_ID)
+        product_id = str(product.id)
+        self.cart[product_id]['quantity'] = quantity
+        self.save()
+        return self.cart
     
+
     def save(self):
         self.session.modified = True
     
@@ -36,6 +44,9 @@ class Cart:
         if product_id in self.cart:
             del self.cart[product_id]
             self.save()
+            return True
+        else:
+            return False
         
     
     def __iter__(self):
