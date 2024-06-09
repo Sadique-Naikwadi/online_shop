@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-{% load custom_filters %}
+<!-- {% load custom_filters %} -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -31,6 +31,7 @@
         text-decoration: none;
         color: white;
       }
+      
     </style>
 
   </head>
@@ -67,7 +68,7 @@
               
               {% if cart  %}
               
-              <span class="cart-counter fw-bold" id="cartCounter">{{ cart|custom_len }}</span> 
+              <span class="cart-counter fw-bold" id="cartCounter">{{ cart|length }}</span> 
               {% else %}
               <span class="cart-counter fw-bold" id="cartCounter">0</span>
               {% endif %}

@@ -41,10 +41,9 @@ def confirm_purchase(request):
         cart = cart.update(request,product,product_quantity)
         
         
-    cart2 = Cart(request)
-    total_cost = cart2.get_total_price()
     
-    context = {'cart': cart, 'total_cost': total_cost}
+    
+    context = {'cart': cart}
     return render(request, 'cart/confirm_purchase.html', context)
 
 
