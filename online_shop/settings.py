@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +142,5 @@ CART_SESSION_ID = 'cartkey'
 STRIPE_PUBLISHABLE_KEY='pk_test_51PPI5iHLoXUM9y8bWZ6bVQCjTSIVy2sCwyuAn180warh53MirpY8salNwG7sZAxCvJDQYf65foPc53TOuRkmmn2n00YOa5Rpl9'
 STRIPE_SECRET_KEY=config('STRIPE_SECRET_KEY')
 STRIPE_API_VERSION='2024-04-10'
+STRIPE_WEBHOOK_SECRET=config('WEBHOOK_SECRET')
 

@@ -14,13 +14,14 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
+    stripe_id = models.CharField(max_length=250, blank=True)
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False, null=False)
 
     class Meta:
         ordering = ['-created']
     
     def __str__(self):
-        return f'Oder {self.id}'
+        return f'Order {self.id}'
     
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
