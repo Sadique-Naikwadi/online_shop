@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
       event.preventDefault();
       let product_id = button.value;
       console.log('product_id: ', product_id);
+      
+      let url = 'cart/remove_from_cart/';
+
+
 
       fetch("/cart/remove_from_cart/", {
         method: "POST",
@@ -26,11 +30,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
           return response.json();
         })
         .then((data) => {
-            if(data.result){
+            if(data.status){
                 parent = document.querySelector("tbody");
                 child = document.getElementById(product_id);
                 parent.removeChild(child);
-
+                document.getElementById("cartCounter").innerHTML = data.cart;
             }
            
         })
@@ -65,46 +69,3 @@ function getCookie(name) {
 }
 
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  event.preventDefault();
-  const csrftoken = getCookie("csrftoken");
-  console.log(csrftoken);
-
-  let selectElement = document.querySelectorAll(".myselect");
-  selectElement.forEach((selected) =>{
-    selected.addEventListener("change", (event) => {
-
-      let element_value = event.target.value;
-      console.log('value: ', element_value);
-      let childElement = event.target;
-      console.log('child: ',childElement);
-      let parentElement = childElement.parentNode;
-      parentElement = parentElement.parentNode;
-      console.log('parent: ',parentElement)
-      let product_id = parentElement.id;
-      console.log('select option parent id: ', product_id);
-
-      fetch("/cart/confirm_purchase/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": csrftoken,
-        },
-        mode: "same-origin",
-        body: JSON.stringify({ product_id: product_id, select_quantity: element_value }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw Error(response.statusText);
-          }
-          
-        })
-        .catch((error) =>{
-          console.log('Error Occured: ', error);
-        });
-  
-    });
-
-  });
-  
-});

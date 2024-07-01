@@ -1,35 +1,31 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 
 {% block content %}
 <div class="container mt-5">
-    <h1>Your Cart</h1>
+    <h1>{% trans "Your Cart" %}</h1>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Product Name</th>
-          <th scope="col">Quantity</th>
-          <!-- <th scope="col">Remove</th> -->
-          <th scope="col">Unit Cost</th>
-          <th scope="col">Cost</th>
+          <th scope="col">{% trans "Product Name" %}</th>
+          <th scope="col">{% trans "Quantity" %}</th>
+          <th scope="col">{% trans "Unit Cost" %}</th>
+          <th scope="col">{% trans "Cost" %}</th>
           
         </tr>
       </thead>
       <tbody>
         <!-- Example product in the cart -->
         
-        {% csrf_token %}
-       {% for item in cart %}
-           
+      
+       {% for item in cart %} 
 
           <tr id="{{ item.product.id }}">
             <td>{{ item.product }}</td>
             <td>
             {{ item.quantity }}
             </td>
-            <!-- <td>
-              <button class="btn btn-danger remove-cart" value="{{ item.product.id }}">Remove</button>
-            </td> -->
+            
             <td>
               {{ item.product.price }}
             </td>
@@ -38,21 +34,14 @@
             </td>
             
           </tr>
-          
-        {% empty %}
-
-        <p>Your Cart is empty. Try again.</p>
-          
         {% endfor %}
-      
-        <!-- Add more product rows as needed -->
       </tbody>
     </table>
     <div class="m-3 m-md-5">
 
     </div>
     <div class="d-grid gap-2 col-3 mx-auto ">
-      <a href="{% url 'orders:create_order' %}"><button class="btn btn-primary" type="button"><strong>Checkout</strong></button></a>
+      <a href="{% url 'orders:create_order' %}"><button class="btn btn-primary" type="button"><strong>{% trans "Checkout" %}</strong></button></a>
     </div>
   </div>
 {% endblock content %}

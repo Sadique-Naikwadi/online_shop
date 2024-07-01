@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 from django.core.exceptions import ValidationError
+import uuid
 
 
 # Create your views here.
@@ -15,8 +16,13 @@ def index(request, category_slug=None):
     return render(request, 'shop/index.html', context)
 
 def product_details(request,pk,slug):
-    
-    product = get_object_or_404(Product, id=pk, slug=slug)
+    print('pk: ', pk)
+    try:
+        pk = uuid.UUID(pk, version=4)
+        product = get_object_or_404(Product, id=pk, slug=slug)
+    except ValueError:
+        raise ValidationError('Invalid UUID')
+
     context = {'product': product}
     return render(request, 'shop/product_details.html', context)
     

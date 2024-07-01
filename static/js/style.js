@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   event.preventDefault();
   const csrftoken = getCookie("csrftoken");
-  console.log(csrftoken);
+  
 
   let buttons = document.querySelectorAll(".add-to-cart");
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
       let product_id = button.value;
+
+      let url = 'cart/add_to_cart/';
+      
+     
+      
 
       fetch("/cart/add_to_cart/", {
         method: "POST",

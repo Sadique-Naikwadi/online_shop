@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
     
     <div class="row">
-        <h3 class="mb-3">Customer Details</h3>
+        <h3 class="mb-3">{% trans "Customer Details" %}</h3>
         <div class="col-md-7">
             <form method="post">
                 {% csrf_token %}
@@ -15,7 +16,7 @@
                     </div>   
                 {% endfor %}
                 
-                <button type="submit" class="btn btn-primary">Place Order</button>
+                <button type="submit" class="btn btn-primary">{% trans "Place Order" %}</button>
               </form>
 
         </div>
@@ -23,7 +24,7 @@
             
 
                 <div class="card text-dark bg-light mb-3 m-5" style="max-width: 18rem;">
-                    <div class="card-header">Your Order</div>
+                    <div class="card-header">{% trans "Your Order" %}</div>
                     <div class="card-body">
                         <table class="table">
                     
@@ -39,7 +40,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td><strong>Total Price</strong></td>
+                                    <td><strong>{% trans "Total Price" %}</strong></td>
                                     <td><strong>$ {{ cart.get_total_price }}</strong></td>
                                 </tr>
                             </tfoot>

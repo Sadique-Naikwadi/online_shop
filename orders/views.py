@@ -8,9 +8,7 @@ from cart.cart import Cart
 
 def create_order(request):
     cart = Cart(request)
-
     if request.method == 'POST':
-
         form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save()
@@ -19,6 +17,7 @@ def create_order(request):
 
             cart.clear()
             request.session['order_id'] = str(order.id)
+                 
             return redirect(reverse('payment:process'))
             # context = {'order': order}
             # return render(request, 'orders/order_success.html', context)

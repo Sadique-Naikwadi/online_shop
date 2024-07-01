@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
     
     {% block content %}
 
-    <h2 class="text-center mb-4">Checkout</h2>
+    <h2 class="text-center mb-4">{% trans "Checkout" %}</h2>
 
     <div class="product-details">
-        <h4>Product Details</h4>
+        <h4>{% trans "Product Details" %}</h4>
         {% for item in order.items.all %}
             <div class="row mb-3">
                 
@@ -29,11 +29,11 @@
     </div>
 
     <div class="summary">
-        <h4>Order Total</h4>
+        <h4>{% trans "Order Total" %}</h4>
         <ul class="list-group list-group-flush">
             
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                Total
+                {% trans "Total" %}
                 <span>$ {{ order.get_total_cost }}</span>
             </li>
         </ul>
@@ -41,7 +41,7 @@
 
 
         <form action="{% url 'payment:process' %}" method="POST">
-            <button type="submit" id="checkout-button" class="btn btn-primary">Pay Now</button>
+            <button type="submit" id="checkout-button" class="btn btn-primary">{% trans "Pay Now" %}</button>
             {% csrf_token %}
         </form>
         

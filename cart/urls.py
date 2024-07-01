@@ -1,6 +1,7 @@
 from django.urls import path,include
 from .import views
-app_name = 'usercart'
+from django.utils.translation import gettext_lazy as _
+app_name = 'cart'
 
 urlpatterns = [
     path('add_to_cart/', views.add_to_cart, name='add_to_cart'),

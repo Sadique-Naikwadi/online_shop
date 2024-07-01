@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 
 {% block content %}
@@ -7,8 +8,8 @@
     <section class="py-2 text-center container">
       <div class="row py-lg-4">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Welcome, To MyStore !</h1>
-          <p class="lead text-body-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis debitis, dolor, officia a eaque voluptas suscipit aliquid dolorem reprehenderit quos fugiat velit sequi vel ea culpa quis laborum dolorum tenetur.</p>
+          <h1 class="fw-light">{% trans "Welcome, To MyStore !" %}</h1>
+          <p class="lead text-body-secondary">{% trans "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis debitis, dolor, officia a eaque voluptas suscipit aliquid dolorem reprehenderit quos fugiat velit sequi vel ea culpa quis laborum dolorum tenetur." %}</p>
           
         </div>
       </div>
@@ -26,13 +27,13 @@
             
             <a href="{% url 'shop:product_details' product.id product.slug %}"><img class="img-fluid" src="{{ product.image.url }}" alt=""></a>
             <div class="card-body">
-              <p class="card-text">{{ product.name }}</p>
+              <p class="card-text">{% blocktrans with product_name=product.name %}{{ product_name }}{% endblocktrans %}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   
-                    <span class="fw-bold me-2 mt-1">${{ product.price }}</span>
-                    <button type="button"  class="btn btn-sm btn-outline-success add-to-cart" value="{{ product.id }}">Add to Cart</button>
-                  
+                    <span class="fw-bold me-2 mt-1">{% blocktrans with product_price=product.price %}${{ product_price }}{% endblocktrans %}</span>
+                    <!-- <button type="button"  class="btn btn-sm btn-outline-success add-to-cart" value="{{ product.id }}">{% trans "Add to Cart" %}</button> -->
+                    <button type="button"  class="btn btn-sm btn-outline-success add-to-cart" value="{{ product.id }}">{% trans "Add to Cart" %}</button>
                 </div>
               </div>
             </div>
