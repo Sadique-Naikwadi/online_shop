@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 19:05+0530\n"
+"POT-Creation-Date: 2024-07-07 11:52+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "Quantity"
 msgstr "量"
 
 #: .\cart\templates\cart\cart_details.html:12
-#: .\cart\templates\cart\cart_details.html:37
+#: .\cart\templates\cart\cart_details.html:36
 msgid "Remove"
 msgstr "取り除く"
 
@@ -43,12 +43,11 @@ msgstr "取り除く"
 msgid "Unit Cost"
 msgstr "単価"
 
-#: .\cart\templates\cart\cart_details.html:48
-#: .\cart\templates\cart\confirm_purchase.html:43
+#: .\cart\templates\cart\cart_details.html:47
 msgid "Your Cart is empty. Try again."
 msgstr "あなたのカートは空です。もう一度やり直してください。"
 
-#: .\cart\templates\cart\cart_details.html:57
+#: .\cart\templates\cart\cart_details.html:56
 msgid "confirm Purchase"
 msgstr "購入を確認します"
 
@@ -56,7 +55,7 @@ msgstr "購入を確認します"
 msgid "Cost"
 msgstr "料金"
 
-#: .\cart\templates\cart\confirm_purchase.html:54
+#: .\cart\templates\cart\confirm_purchase.html:44
 msgid "Checkout"
 msgstr "チェックアウト"
 
@@ -73,5 +72,5 @@ msgid "cart_details/"
 msgstr "カートの詳細/"
 
 #: .\cart\urls.py:10
-msgid "confirm_purchase/"
-msgstr "購入を確認します/"
+msgid "update_purchase/"
+msgstr "更新_購入/"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-26 14:25+0530\n"
+"POT-Creation-Date: 2024-07-07 11:52+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Japanese"
 msgstr ""
 
-#: .\online_shop\urls.py:26
+#: .\online_shop\urls.py:28
 msgid "cart/"
 msgstr ""
 
-#: .\online_shop\urls.py:27
+#: .\online_shop\urls.py:29
 msgid "order/"
 msgstr ""
 
-#: .\online_shop\urls.py:28
+#: .\online_shop\urls.py:30
 msgid "payment/"
 msgstr ""
 
@@ -42,15 +42,15 @@ msgstr ""
 msgid "Online Shop"
 msgstr ""
 
-#: .\templates\base.html:66
+#: .\templates\base.html:67
 msgid "SHOP"
 msgstr ""
 
-#: .\templates\base.html:77
+#: .\templates\base.html:78
 msgid "Search"
 msgstr ""
 
-#: .\templates\base.html:90
+#: .\templates\base.html:91
 #, python-format
 msgid "%(cart)s"
 msgstr ""

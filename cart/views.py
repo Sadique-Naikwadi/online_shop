@@ -54,7 +54,7 @@ def remove_from_cart(request):
         dataToSend = {'status': 'success', 'cart': len(cart.cart)}
     return JsonResponse(dataToSend)
 
-def confirm_purchase(request):
+def update_purchase(request):
     print('before get: ', request)
     cart = Cart(request)
     if request.method == 'POST':
@@ -63,7 +63,8 @@ def confirm_purchase(request):
         product_id = data.get('product_id')
         quantity = data.get('select_quantity')
 
-        if product_id  and quantity:
+        if product_id and quantity:
+            print('enter in if statment')
 
             try:
 

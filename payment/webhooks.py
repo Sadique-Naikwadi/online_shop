@@ -6,6 +6,7 @@ from orders.models import Order
 
 @csrf_exempt
 def stripe_webhook(request):
+    print('enter in stripe_webhook')
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
@@ -24,6 +25,7 @@ def stripe_webhook(request):
     if event.type == 'checkout.session.completed':
         session = event.data.object
         if session.mode == 'payment' and session.payment_status =='paid':
+            print('enter in if statement of session_mode')
             try:
                 order = Order.objects.get(id=session.client_reference_id)
             except Order.DoesNotExist:
