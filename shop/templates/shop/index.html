@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load l10n %}
 
 
 {% block content %}
@@ -24,7 +25,7 @@
         {% for product in products %}
         <div class="col">
           <div class="card shadow-sm">
-            
+                        
             <a href="{% url 'shop:product_details' product.id product.slug %}"><img class="img-fluid" src="{{ product.image.url }}" alt=""></a>
             <div class="card-body">
               <p class="card-text">{% blocktrans with product_name=product.name %}{{ product_name }}{% endblocktrans %}</p>

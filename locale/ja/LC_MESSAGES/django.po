@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-07 11:52+0530\n"
+"POT-Creation-Date: 2024-07-11 14:18+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\online_shop\settings.py:117
+#: .\online_shop\settings.py:128
 msgid "English"
 msgstr "英語"
 
-#: .\online_shop\settings.py:118
+#: .\online_shop\settings.py:129
 msgid "Japanese"
 msgstr "日本語"
 
-#: .\online_shop\urls.py:28
+#: .\online_shop\urls.py:29
 msgid "cart/"
 msgstr "カート/"
 
-#: .\online_shop\urls.py:29
+#: .\online_shop\urls.py:30
 msgid "order/"
 msgstr "注文/"
 
-#: .\online_shop\urls.py:30
+#: .\online_shop\urls.py:31
 msgid "payment/"
 msgstr "支払い/"
 
@@ -42,15 +42,15 @@ msgstr "支払い/"
 msgid "Online Shop"
 msgstr "オンラインショップ"
 
-#: .\templates\base.html:67
+#: .\templates\base.html:107
 msgid "SHOP"
 msgstr "オンラインショップ"
 
-#: .\templates\base.html:78
+#: .\templates\base.html:118
 msgid "Search"
 msgstr "検索"
 
-#: .\templates\base.html:91
+#: .\templates\base.html:140
 #, python-format
 msgid "%(cart)s"
 msgstr ""

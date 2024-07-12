@@ -1,9 +1,10 @@
 {% load i18n %}
+
 <!DOCTYPE html>
 
 {% load static %}
 <!-- {% load custom_filters %} -->
-<html lang="{% get_current_language as LANGUAGE_CODE %}">
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -137,7 +138,7 @@
               
               {% if cart  %}
               
-              <span class="cart-counter fw-bold" id="cartCounter">{% blocktrans with cart=cart|length %}{{ cart }}{% endblocktrans %}</span> 
+              <span class="cart-counter fw-bold" id="cartCounter">{{ cart|length }}</span> 
               {% else %}
               <span class="cart-counter fw-bold" id="cartCounter">0</span>
               {% endif %}

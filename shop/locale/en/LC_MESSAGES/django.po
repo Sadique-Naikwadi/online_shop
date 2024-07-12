@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 18:46+0530\n"
+"POT-Creation-Date: 2024-07-11 14:18+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: .\shop\templates\shop\index.html:11
 msgid "Welcome, To MyStore !"
 msgstr ""
@@ -29,18 +30,18 @@ msgid ""
 "tenetur."
 msgstr ""
 
-#: .\shop\templates\shop\index.html:30
+#: .\shop\templates\shop\index.html:32
 #: .\shop\templates\shop\product_details.html:6
 #, python-format
 msgid "%(product_name)s"
 msgstr ""
 
-#: .\shop\templates\shop\index.html:34
+#: .\shop\templates\shop\index.html:36
 #, python-format
 msgid "$%(product_price)s"
 msgstr ""
 
-#: .\shop\templates\shop\index.html:35 .\shop\templates\shop\index.html:36
+#: .\shop\templates\shop\index.html:37 .\shop\templates\shop\index.html:38
 msgid "Add to Cart"
 msgstr ""
 

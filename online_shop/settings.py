@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -171,5 +173,14 @@ STRIPE_SECRET_KEY=config('STRIPE_SECRET_KEY')
 STRIPE_API_VERSION='2024-04-10'
 STRIPE_WEBHOOK_SECRET=config('WEBHOOK_SECRET')
 
-
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'ja'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
 
