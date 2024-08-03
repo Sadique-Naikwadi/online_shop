@@ -28,7 +28,7 @@ def add_to_cart(request):
 
         cart = Cart(request)
         cart.add(product=product)
-        dataToSend = {"total": len(cart.cart)}
+        dataToSend = {"total": len(cart)}
         print('data:', dataToSend)
         
 
@@ -51,7 +51,7 @@ def remove_from_cart(request):
         
         cart = Cart(request)
         cart.remove(product=product)
-        dataToSend = {'status': 'success', 'cart': len(cart.cart)}
+        dataToSend = {'status': 'success', 'cart': len(cart)}
     return JsonResponse(dataToSend)
 
 def update_purchase(request):
@@ -76,14 +76,13 @@ def update_purchase(request):
                 raise ValidationError('invalid UUID')
             
             # cart.update(product,product_quantity)
+            
             print('Cart before update: ', cart.cart)
-            cart.update(product,int(quantity))
+            cart.update(product=product,quantity=int(quantity))
             print('Cart after update: ', cart.cart)
-            return JsonResponse({'status': 'success', 'cart': cart.cart})
+            dataToSend = {'status': 'success', 'cart': len(cart)}
+            return JsonResponse(dataToSend)
 
-
-        
-    print('cart in context: ', cart.cart)
     context = {'cart': cart}
     return render(request, 'cart/confirm_purchase.html', context)       
     

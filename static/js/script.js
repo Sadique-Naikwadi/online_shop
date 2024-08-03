@@ -114,9 +114,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (!response.ok) {
               throw Error(response.statusText);
             }
-            console.log(response.json());
+        
             return response.json();
             
+          })
+          .then((data) => {
+            if(data.status){
+              console.log(data.cart);
+              document.getElementById("cartCounter").innerHTML = data.cart;
+            }
           })
           .catch((error) =>{
             console.log('Error Occured: ', error);
