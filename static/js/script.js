@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let buttons = document.querySelectorAll(".add-to-cart");
     buttons.forEach((button) => {
       button.addEventListener("click", (event) => {
-        
+        event.preventDefault();
         let product_id = button.value;
   
         let url = gettext("/cart/add_to_cart/");
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let remove_buttons = document.querySelectorAll(".remove-cart");
         remove_buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
-        
+        event.preventDefault();
         let product_id = button.value;
         console.log('product_id: ', product_id);
         
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let selectElement = document.querySelectorAll(".myselect");
     selectElement.forEach((found) => {
       found.addEventListener("change", (event) => {
-
+        event.preventDefault();
         let element_value = event.target.value;
         console.log('value: ', element_value);
         let childElement = event.target;

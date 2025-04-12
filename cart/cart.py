@@ -5,14 +5,15 @@ from decimal import Decimal
 class Cart:
     
     def __init__(self, request):
-        # self.session = request.session
-
-        # self.cart = self.session.get(settings.CART_SESSION_ID)
-        # if not self.cart:
-        #     self.cart = {}
-        #     self.session[settings.CART_SESSION_ID] = self.cart
         self.session = request.session
-        self.cart = self.session.get(settings.CART_SESSION_ID, {})
+
+        self.cart = self.session.get(settings.CART_SESSION_ID)
+        if not self.cart:
+            self.cart = {}
+            self.session[settings.CART_SESSION_ID] = self.cart
+        
+        # self.session = request.session
+        # self.cart = self.session.get(settings.CART_SESSION_ID, {})
 
     def add(self, product, quantity=1):
         
@@ -86,3 +87,5 @@ class Cart:
         if settings.CART_SESSION_ID in self.session:
             del self.session[settings.CART_SESSION_ID]
             self.session.modified = True
+        
+    
