@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'parler',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -181,3 +182,22 @@ PARLER_LANGUAGES = {
     }
 }
 
+
+
+AWS_ACCESS_KEY_ID = 'AKIAUKTOYCFSDLVMSIUE'
+AWS_SECRET_ACCESS_KEY = '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'
+
+
+AWS_STORAGE_BUCKET_NAME = 'shop-bkt-25'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_FILE_OVERWRITE = False
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+
+    "staticfiles": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+}
